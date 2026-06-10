@@ -3,278 +3,333 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JISO（自走）— 社長の仕事は、承認だけになる。</title>
-<meta name="description" content="やりたいことを一度だけ伝える。あとは、会社が自走する。AIが市場調査・広告・営業・請求まで回し、お金が必要なときだけ稟議が届く——自律経営OS、JISO（自走）。">
-<!-- 背景差し替え用: Seedance 2.0 prompt（後日 .mp4 をhero-videoとして敷く場合）
-"Night-blue misty atmosphere, a single warm golden shaft of light descending through slow drifting fog, gentle floating dust particles, extremely slow camera drift, cinematic, no people, loopable 15s, 2K" -->
+<title>JISO（自走）— 日本初の自律経営OS。社長の仕事は、承認だけになる。</title>
+<meta name="description" content="やりたいことを一度だけ伝える。AIが市場調査・広告・営業・請求まで自走し、お金が必要なときだけ稟議が届く。自律経営OS、JISO。β版事前登録受付中。">
+<!-- ============ image-2 差し替えスロット（api.openai.com許可後の新チャットで生成） ============
+[1] ヒーロー右の動画サムネ風画像: "Warm sunrise gradient background, floating Japanese ringi approval UI card with red hanko stamp 承認, soft 3D, optimistic SaaS promo thumbnail with text 会社が、自走する。 1280x720"
+[2] 業種カード用アイコン8種: "Minimal 3D icon of {建物クレーン/家と鍵/天秤/ショッピングバッグ/店舗のれん/クラウドサーバ/本と帽子/歯車}, soft clay render, single object, white background"
+[3] レポートカード画像: "Deep navy gradient card with two large circles reading 24h nonstop and ¥0 unapproved spend, modern data report style, 1200x800"
+[4] OGP: "Clean composite of JISO landing page hero, red hanko seal logo 自走, headline 社長の仕事は、承認だけになる。 1200x630"
+================================================================== -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Noto+Sans+JP:wght@300;400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho:wght@600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#0b1320;          /* 夜の藍 */
-  --ink2:#0e1726;
-  --mist:#aebccd;
-  --txt:#eef2f6;
-  --dim:#8b99ab;
-  --gold:#e8c184;         /* 光 */
-  --gold-deep:#c89a55;
-  --line:rgba(238,242,246,.14);
+  --ink:#171520;
+  --navy:#141225;
+  --navy2:#1d1a33;
+  --gray:#5f5e68;
+  --line:#e8e6e1;
+  --paper:#ffffff;
+  --wash:#fdf7f1;            /* 暁のウォッシュ */
+  --shu:#e0341f;
+  --shu-soft:#ffece8;
+  --gold:#c98f3d;
   --mono:'IBM Plex Mono',monospace;
   --min:'Shippori Mincho',serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--ink);color:var(--txt);font-family:'Noto Sans JP',sans-serif;font-weight:300;font-size:15.5px;line-height:2.1;letter-spacing:.04em;overflow-x:hidden}
+body{background:var(--paper);color:var(--ink);font-family:'Noto Sans JP',sans-serif;font-size:16px;line-height:1.95;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
-::selection{background:rgba(232,193,132,.35)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+::selection{background:rgba(224,52,31,.18)}
+h1,h2,h3{letter-spacing:.01em}
 
-/* ---------- 背景キャンバス ---------- */
-#sky{position:fixed;inset:0;z-index:0;display:block}
-.veil{position:fixed;inset:0;z-index:1;pointer-events:none;background:
-  radial-gradient(120% 90% at 50% 110%, rgba(11,19,32,.85), transparent 60%),
-  linear-gradient(180deg, rgba(11,19,32,.25), rgba(11,19,32,0) 30%, rgba(11,19,32,0) 70%, rgba(11,19,32,.6));}
-main,nav,footer{position:relative;z-index:2}
+/* ============ nav ============ */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;height:66px;gap:30px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:900;font-size:17px}
+.brand small{display:block;font-weight:500;font-size:10px;color:var(--gray);letter-spacing:.16em;line-height:1.3}
+.nav-links{display:flex;gap:26px;font-size:13.5px;font-weight:500;color:#3c3b44;margin-right:auto}
+.nav-links a:hover{color:var(--shu)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--shu);color:#fff;font-weight:700;font-size:14px;padding:12px 26px;border-radius:8px;border:none;cursor:pointer;transition:background .2s}
+.btn:hover{background:var(--shu-dark,#c22a17)}
+.btn.line{background:#fff;color:var(--ink);border:1.5px solid #c9c7c1}
+.btn.line:hover{border-color:var(--shu);color:var(--shu);background:#fff}
+.btn.onDark{background:#fff;color:var(--ink)}
+.btn.onDark:hover{background:var(--shu);color:#fff}
 
-/* ---------- nav ---------- */
-nav{position:fixed;inset:0 0 auto 0;z-index:60;transition:background .4s,backdrop-filter .4s}
-nav.scrolled{background:rgba(11,19,32,.72);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav-in{display:flex;align-items:center;justify-content:space-between;height:72px}
-.logo{font-family:var(--min);font-weight:600;font-size:16px;letter-spacing:.22em;display:flex;align-items:center;gap:12px}
-.logo .sym{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 14px rgba(232,193,132,.8)}
-.nav-links{display:flex;gap:34px;font-size:12.5px;letter-spacing:.22em;color:var(--mist)}
-.nav-links a{transition:color .3s}
-.nav-links a:hover{color:var(--gold)}
+/* ============ hero帯（明るいグラデ） ============ */
+.hero{background:linear-gradient(168deg,#fff7ef 0%,#ffe9df 38%,#ffd9c4 100%);border-bottom:1px solid #f2e3d6}
+.hero-in{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:86px 0 92px}
+.spark{position:absolute;font-size:30px;transform:rotate(-12deg)}
+h1{font-weight:900;font-size:clamp(36px,4.8vw,60px);line-height:1.4}
+h1 .shu{color:var(--shu)}
+h1 .sub-line{display:block;font-size:.62em;font-weight:900;margin-top:10px;color:#3a3842}
+.hero-right p{font-size:15.5px;color:#48464f}
+.hero-right p b{color:var(--ink)}
+.hero-right .cta-row{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
+.hero-right .note{margin-top:14px;font-size:12px;color:#8a8791}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;color:var(--shu);margin-bottom:22px;background:#fff;border:1px solid #f1d9cb;border-radius:999px;padding:7px 16px}
 
-/* ---------- hero ---------- */
-.hero{min-height:100svh;display:flex;align-items:center;padding:120px 0 80px}
-.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.42em;color:var(--gold);margin-bottom:34px;opacity:.9}
-h1{font-family:var(--min);font-weight:600;font-size:clamp(36px,6.4vw,68px);line-height:1.72;letter-spacing:.06em}
-.hero .lead{margin-top:34px;color:var(--mist);font-size:clamp(13.5px,1.5vw,15.5px);line-height:2.4;max-width:34em}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;margin-top:48px;border:1px solid rgba(232,193,132,.55);color:var(--txt);font-size:13px;letter-spacing:.3em;padding:18px 46px;transition:background .4s,color .4s,border-color .4s;background:rgba(11,19,32,.25);backdrop-filter:blur(4px)}
-.btn:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
-.scroll-hint{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:10px;letter-spacing:.4em;color:var(--dim);writing-mode:vertical-rl;display:flex;align-items:center;gap:12px}
-.scroll-hint::after{content:"";width:1px;height:54px;background:linear-gradient(var(--gold),transparent);animation:fall 2.2s ease-in-out infinite}
-@keyframes fall{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+/* ============ 紺帯: エンジンカード ============ */
+.dark{background:linear-gradient(180deg,var(--navy) 0%,var(--navy2) 100%);color:#f3f2f7;padding:96px 0 104px;text-align:center}
+.dark h2{font-weight:900;font-size:clamp(28px,4vw,46px)}
+.dark .tag{margin-top:14px;color:#b9b3d6;font-size:15.5px}
+.engines{margin-top:58px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:left}
+.eng{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:30px 26px;transition:background .25s,transform .25s}
+.eng:hover{background:rgba(255,255,255,.09);transform:translateY(-4px)}
+.eng .ei{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;font-family:var(--min);font-weight:700;font-size:18px;color:#fff;margin-bottom:18px}
+.eng:nth-child(1) .ei{background:#e0341f}
+.eng:nth-child(2) .ei{background:#c98f3d}
+.eng:nth-child(3) .ei{background:#3e7bb6}
+.eng:nth-child(4) .ei{background:#3f9e6e}
+.eng h3{font-size:17px;font-weight:700;margin-bottom:8px}
+.eng p{font-size:13px;color:#b9b3d6;line-height:1.9}
+.dark .closing{margin:64px auto 0;max-width:46em;font-size:15px;color:#cfcae4}
+.dark .closing b{color:#fff}
 
-/* ---------- 章 ---------- */
-section{padding:160px 0}
-.chapter{font-family:var(--mono);font-size:11px;letter-spacing:.42em;color:var(--gold);margin-bottom:30px}
-h2{font-family:var(--min);font-weight:600;font-size:clamp(26px,4vw,42px);line-height:1.95;letter-spacing:.06em}
-.prose{margin-top:30px;color:var(--mist);max-width:36em;line-height:2.5;font-size:14.5px}
+/* ============ 交互セクション ============ */
+section.alt{padding:104px 0}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.row + .row{margin-top:110px}
+.row h2{font-weight:900;font-size:clamp(25px,3.2vw,38px);line-height:1.55}
+.row h2 .shu{color:var(--shu)}
+.row .body{margin-top:20px;color:var(--gray);font-size:15px}
+.row .price{margin-top:18px;font-weight:700}
+.row .price a{color:var(--shu);text-decoration:underline;font-weight:500;font-size:13.5px;margin-left:10px}
+.row .cta-row{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
 
-/* 物語1: 一行ずつ現れる宣言 */
-.vow{max-width:760px}
-.vow-lines{margin-top:64px;display:flex;flex-direction:column;gap:34px}
-.vline{display:flex;align-items:baseline;gap:26px;border-bottom:1px solid var(--line);padding-bottom:30px}
-.vline .no{font-family:var(--mono);font-size:11px;color:var(--gold);letter-spacing:.2em;flex-shrink:0}
-.vline p{font-family:var(--min);font-size:clamp(17px,2.3vw,22px);line-height:1.9;letter-spacing:.05em}
-.vline span.note{display:block;font-family:'Noto Sans JP',sans-serif;font-size:12.5px;color:var(--dim);margin-top:8px;letter-spacing:.04em}
+/* メディアカード（CSS製プロダクト画。image-2スロット[1]差し替え可） */
+.media{position:relative;border-radius:18px;overflow:hidden;min-height:360px;box-shadow:0 30px 70px rgba(23,21,32,.14)}
+.media.m1{background:linear-gradient(150deg,#1d1a33,#3a2030 60%,#7a2c1d)}
+.media.m2{background:linear-gradient(150deg,#fff3e8,#ffe2d2)}
+.m-ringi{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-2deg);width:78%;max-width:340px;background:#fff;border-radius:14px;padding:22px;box-shadow:0 26px 60px rgba(0,0,0,.35);font-size:12px}
+.m-ringi .rt{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;color:#8a8791;border-bottom:1px solid var(--line);padding-bottom:10px}
+.m-ringi h4{font-size:14.5px;font-weight:700;margin:12px 0 10px}
+.m-ringi table{width:100%;border-collapse:collapse;font-size:11.5px}
+.m-ringi td{padding:7px 0;border-bottom:1px dashed var(--line)}
+.m-ringi td:first-child{color:#8a8791;width:38%}
+.m-ringi .roi{font-family:var(--mono);color:var(--shu);font-weight:700}
+.m-stamp{position:absolute;top:12px;right:14px;width:58px;height:58px;border:2.5px solid var(--shu);border-radius:50%;color:var(--shu);display:flex;align-items:center;justify-content:center;font-family:var(--min);font-weight:700;font-size:15px;transform:rotate(-12deg)}
+.m-log{position:absolute;inset:auto 6% 7% 6%;background:rgba(20,18,37,.85);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:14px 18px;font-family:var(--mono);font-size:11px;color:#d8d4ea;line-height:2}
+.m-log .ok{color:#5fd49a}.m-log .r{color:#ff8a76}
+.m2 .stage2{position:absolute;inset:0;display:grid;place-items:center}
+.funnel-mini{width:74%;background:#fff;border-radius:14px;padding:22px 24px;box-shadow:0 26px 60px rgba(122,44,29,.18)}
+.funnel-mini .ft{font-size:12px;font-weight:700;display:flex;justify-content:space-between;margin-bottom:14px}
+.funnel-mini .ft span{font-family:var(--mono);color:var(--shu)}
+.fbars{display:flex;align-items:flex-end;gap:8px;height:92px}
+.fbars i{flex:1;background:linear-gradient(180deg,#f5b8ad,var(--shu));border-radius:4px 4px 0 0}
+.fl{display:flex;gap:8px;margin-top:8px}
+.fl span{flex:1;text-align:center;font-size:9px;color:#8a8791}
 
-/* 物語2: 稟議 */
-.ringi-stage{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.ringi{position:relative;background:rgba(14,23,38,.66);backdrop-filter:blur(14px);border:1px solid var(--line);padding:40px 38px;max-width:430px;box-shadow:0 50px 120px rgba(0,0,0,.5)}
-.ringi::before{content:"";position:absolute;inset:8px;border:1px solid rgba(232,193,132,.18);pointer-events:none}
-.ringi .rt{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--dim);padding-bottom:16px;border-bottom:1px solid var(--line)}
-.ringi h3{font-family:var(--min);font-size:18px;font-weight:600;margin:22px 0 4px;letter-spacing:.06em}
-.ringi .from{font-size:11px;color:var(--dim);letter-spacing:.1em;margin-bottom:22px}
-.ringi dl{display:grid;grid-template-columns:auto 1fr;gap:12px 24px;font-size:12.5px}
-.ringi dt{color:var(--dim);letter-spacing:.08em}
-.ringi dd{font-family:var(--mono);letter-spacing:.02em}
-.ringi dd.gold{color:var(--gold)}
-.stamp{position:absolute;top:26px;right:30px;width:78px;height:78px;border:2.5px solid var(--gold-deep);border-radius:50%;color:var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--min);font-weight:700;transform:rotate(-11deg) scale(2.2);opacity:0;transition:all .3s cubic-bezier(.2,1.6,.4,1);text-shadow:0 0 22px rgba(232,193,132,.55)}
-.stamp .s1{font-size:21px;line-height:1.15;letter-spacing:.1em}
-.stamp .s2{font-family:var(--mono);font-size:8px;letter-spacing:.18em;margin-top:3px}
-.ringi.done .stamp{opacity:1;transform:rotate(-11deg) scale(1)}
+/* ============ 業種グリッド ============ */
+.industries{background:#faf8f5;padding:104px 0}
+.industries h2{text-align:center;font-weight:900;font-size:clamp(26px,3.6vw,42px)}
+.industries .lead{text-align:center;color:var(--gray);max-width:42em;margin:18px auto 0;font-size:15px}
+.igrid{margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.icard{position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px 24px 70px;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.icard:hover{transform:translateY(-4px);box-shadow:0 20px 46px rgba(23,21,32,.1)}
+.icard h3{font-size:16.5px;font-weight:900;margin-bottom:10px}
+.icard p{font-size:12.5px;color:var(--gray);line-height:1.85}
+.icard .blob{position:absolute;right:-26px;bottom:-30px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#ff8d72,var(--shu))}
+.icard .ico{position:absolute;right:14px;bottom:14px;width:56px;height:56px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:24px;box-shadow:0 8px 20px rgba(0,0,0,.12)}
+.icard .more{position:absolute;left:24px;bottom:22px;font-size:12.5px;font-weight:700;color:var(--shu);border-bottom:1.5px solid var(--shu);padding-bottom:1px}
 
-/* 物語3: 8段 縦の帯 */
-.belt{margin-top:70px;display:grid;grid-template-columns:repeat(8,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.belt div{padding:42px 6px;text-align:center;border-right:1px solid var(--line);transition:background .5s}
-.belt div:last-child{border-right:none}
-.belt div:hover{background:rgba(232,193,132,.05)}
-.belt .bn{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:.2em;display:block;margin-bottom:14px}
-.belt .bw{font-family:var(--min);font-size:clamp(13px,1.7vw,17px);letter-spacing:.14em;writing-mode:vertical-rl}
+/* ============ レポートカード ============ */
+.report{padding:104px 0}
+.report h2{text-align:center;font-weight:900;font-size:clamp(26px,3.4vw,40px);max-width:24em;margin:0 auto}
+.rcard{margin-top:54px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;box-shadow:0 24px 60px rgba(23,21,32,.08)}
+.rviz{border-radius:14px;background:linear-gradient(160deg,#141225,#33203c 55%,#7a2c1d);min-height:300px;position:relative;overflow:hidden}
+.rviz .circ{position:absolute;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center}
+.rviz .c1{width:190px;height:190px;background:radial-gradient(circle at 32% 28%,#ff7a5e,var(--shu));top:13%;left:9%}
+.rviz .c2{width:150px;height:150px;background:radial-gradient(circle at 32% 28%,#e8c184,var(--gold));bottom:11%;right:11%}
+.rviz .cn{font-family:var(--mono);font-weight:700;font-size:36px;line-height:1.1}
+.rviz .c2 .cn{font-size:30px}
+.rviz .cl{font-size:11px;opacity:.92;margin-top:4px}
+.rviz .vtag{position:absolute;top:16px;right:18px;background:#fff;color:var(--ink);font-family:var(--min);font-weight:700;font-size:12px;padding:6px 16px;border-radius:999px;letter-spacing:.12em}
+.rtext .pill{display:inline-block;font-size:11px;background:var(--shu-soft);color:var(--shu);font-weight:700;border-radius:999px;padding:5px 14px;margin-bottom:16px}
+.rtext h3{font-weight:900;font-size:clamp(20px,2.4vw,28px);line-height:1.6}
+.rtext p{margin-top:16px;color:var(--gray);font-size:14px}
+.rtext .btn{margin-top:26px}
 
-/* 物語4: 役割 二句 */
-.duet{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line)}
-.duet>div{padding:70px 56px}
-.duet>div:first-child{border-right:1px solid var(--line)}
-.duet h3{font-family:var(--min);font-size:21px;font-weight:600;letter-spacing:.1em;margin-bottom:30px}
-.duet h3 em{font-style:normal;color:var(--gold)}
-.duet ul{list-style:none;color:var(--mist);font-size:13.5px}
-.duet li{padding:13px 0;border-bottom:1px solid var(--line);letter-spacing:.05em}
-.duet li:last-child{border:none}
-
-/* 結び CTA */
-.coda{text-align:center;padding:200px 0 170px}
-.coda h2{font-size:clamp(28px,4.6vw,48px)}
-.coda .prose{margin-left:auto;margin-right:auto;text-align:center}
-.signup{margin:56px auto 0;display:flex;max-width:480px;border:1px solid rgba(232,193,132,.5);background:rgba(11,19,32,.4);backdrop-filter:blur(6px)}
-.signup input{flex:1;background:transparent;border:none;padding:18px 22px;color:var(--txt);font-size:14px;font-family:inherit;letter-spacing:.05em}
+/* ============ CTA ============ */
+.final{background:linear-gradient(168deg,#fff7ef,#ffe2d2);padding:110px 0;text-align:center;border-top:1px solid #f2e3d6}
+.final h2{font-weight:900;font-size:clamp(28px,4vw,46px)}
+.final .sub{color:#5d5a63;margin-top:16px;font-size:15px}
+.signup{margin:36px auto 0;display:flex;max-width:540px;background:#fff;border:1.5px solid var(--ink);border-radius:12px;overflow:hidden}
+.signup input{flex:1;border:none;padding:17px 24px;font-size:15px;font-family:inherit}
 .signup input:focus{outline:none}
-.signup button{background:var(--gold);color:var(--ink);border:none;font-size:12.5px;letter-spacing:.26em;padding:0 36px;cursor:pointer;font-weight:500;transition:filter .3s}
-.signup button:hover{filter:brightness(1.08)}
-.micro{margin-top:22px;font-size:11px;color:var(--dim);letter-spacing:.12em}
+.signup button{background:var(--shu);color:#fff;border:none;font-weight:700;font-size:14px;padding:0 32px;cursor:pointer}
+.micro{margin-top:16px;font-size:12px;color:#8a8791}
 
-footer{border-top:1px solid var(--line);padding:44px 0;font-size:11px;color:var(--dim);letter-spacing:.14em}
-.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer{padding:40px 0;font-size:12.5px;color:var(--gray);border-top:1px solid var(--line)}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:center}
 
 /* reveal */
-.rv{opacity:0;transform:translateY(34px);transition:opacity 1.1s cubic-bezier(.16,1,.3,1),transform 1.1s cubic-bezier(.16,1,.3,1)}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
 .rv.in{opacity:1;transform:none}
-.rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}.rv.d3{transition-delay:.36s}.rv.d4{transition-delay:.48s}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
 
-@media(max-width:880px){
+@media(max-width:1020px){
+  .engines{grid-template-columns:repeat(2,1fr)}
+  .igrid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:760px){
   .nav-links{display:none}
-  section{padding:110px 0}
-  .ringi-stage{grid-template-columns:1fr;gap:56px}
-  .ringi{max-width:100%}
-  .belt{grid-template-columns:repeat(4,1fr)}
-  .belt div:nth-child(4){border-right:none}
-  .belt div:nth-child(-n+4){border-bottom:1px solid var(--line)}
-  .duet{grid-template-columns:1fr}
-  .duet>div:first-child{border-right:none;border-bottom:1px solid var(--line)}
-  .duet>div{padding:50px 30px}
-  .signup{flex-direction:column}
-  .signup button{padding:16px}
-  .scroll-hint{display:none}
+  .hero-in{grid-template-columns:1fr;gap:36px;padding:56px 0 64px}
+  .row{grid-template-columns:1fr;gap:40px}
+  .row.flip .media{order:-1}
+  .rcard{grid-template-columns:1fr}
+  .engines,.igrid{grid-template-columns:1fr}
+  .signup{flex-direction:column;border-radius:14px}
+  .signup button{padding:15px}
 }
-@media(prefers-reduced-motion:reduce){
-  .rv{opacity:1;transform:none;transition:none}
-  .scroll-hint::after{animation:none}
-  .stamp{transition:none}
-}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
 
-<canvas id="sky" aria-hidden="true"></canvas>
-<div class="veil" aria-hidden="true"></div>
-
-<nav id="nav">
+<nav>
   <div class="wrap nav-in">
-    <div class="logo"><span class="sym"></span>自走 — JISO</div>
+    <a class="brand" href="#">
+      <svg width="38" height="38" viewBox="0 0 48 48" aria-label="自走"><rect x="2" y="2" width="44" height="44" rx="7" fill="#e0341f"/><text x="24" y="20.5" text-anchor="middle" font-family="'Shippori Mincho',serif" font-weight="700" font-size="16" fill="#fff">自</text><text x="24" y="38.5" text-anchor="middle" font-family="'Shippori Mincho',serif" font-weight="700" font-size="16" fill="#fff">走</text></svg>
+      <span>JISO<small>AUTONOMOUS BUSINESS OS</small></span>
+    </a>
     <div class="nav-links">
-      <a href="#vow">思想</a><a href="#ringi">稟議</a><a href="#cycle">循環</a><a href="#signup">登録</a>
+      <a href="#engines">プロダクト</a><a href="#industries">業種別</a><a href="#report">仕組み</a><a href="#signup">β登録</a>
     </div>
+    <a class="btn" href="#signup">無料でβ登録</a>
   </div>
 </nav>
 
-<main>
-
-  <!-- 序 -->
-  <header class="hero">
-    <div class="wrap">
-      <div class="eyebrow rv in">JISO — AUTONOMOUS BUSINESS OS</div>
-      <h1 class="rv in d1">社長の仕事は、<br>承認だけになる。</h1>
-      <p class="lead rv in d2">やりたいことを、一度だけ伝えてください。<br>市場を調べ、広告を打ち、電話をかけ、請求書を送る——<br>そのすべてを、AIが夜も止まらず回し続けます。</p>
-      <a class="btn rv in d3" href="#signup">β版の案内を受け取る</a>
+<!-- ============ HERO（明るいグラデ帯・左見出し/右説明） ============ -->
+<header class="hero">
+  <div class="wrap hero-in">
+    <div>
+      <div class="eyebrow rv in">JISO — PRIVATE BETA</div>
+      <h1 class="rv in d1">日本初※の<span class="shu">自律経営OS</span>で、<span class="sub-line">社長の仕事は、承認だけになる。</span></h1>
     </div>
-    <div class="scroll-hint">SCROLL</div>
-  </header>
-
-  <!-- 壱 思想 -->
-  <section id="vow">
-    <div class="wrap vow">
-      <div class="chapter rv">壱 — PHILOSOPHY</div>
-      <h2 class="rv">経営から、作業を引く。<br>残るのは、決断だけ。</h2>
-      <div class="vow-lines">
-        <div class="vline rv"><span class="no">一</span><div><p>AIは、訊かない。</p><span class="note">指示を待たず、数字を観測し、自ら次の一手を計画します。</span></div></div>
-        <div class="vline rv"><span class="no">二</span><div><p>金が要るときだけ、稟議が届く。</p><span class="note">想定ROIと撤退条件のない申請は、存在を許されません。</span></div></div>
-        <div class="vline rv"><span class="no">三</span><div><p>予測は、必ず答え合わせされる。</p><span class="note">試算と実測の乖離はすべて記録され、AI自身の信用になります。</span></div></div>
+    <div class="hero-right rv in d2">
+      <p>やりたいことを一度だけ伝えると、信頼できる単一のOS上で<b>AIが市場調査・広告・テレアポ・商談・請求まで自走</b>。お金が必要なときだけ、<b>想定ROIと撤退条件つきの稟議</b>が届くため、導入初日から手放しで効果を実感いただけます。</p>
+      <div class="cta-row">
+        <a class="btn" href="#signup">無料でβ登録</a>
+        <a class="btn line" href="#report">仕組みを見る</a>
       </div>
+      <p class="note">※「稟議起票型の自律経営OS」として。営業・マーケ・請求の一気通貫自走は国内に確認できる競合なし（2026年6月 自社調べ）</p>
     </div>
-  </section>
+  </div>
+</header>
 
-  <!-- 弐 稟議 -->
-  <section id="ringi">
-    <div class="wrap ringi-stage">
-      <div>
-        <div class="chapter rv">弐 — RINGI</div>
-        <h2 class="rv">AIが稟議を上げ、<br>人が、判を押す。</h2>
-        <p class="prose rv">広告も、外注も、インフルエンサーの起用も。費用が生まれる打ち手はすべて、根拠を添えた一枚の稟議になってあなたに届きます。承認すれば即座に執行され、却下すればAIは別の道を探します。<br><br>勝手にお金が使われることは、ありません。</p>
-      </div>
-      <div class="ringi rv d2" id="ringiCard">
-        <div class="stamp"><span class="s1">承認</span><span class="s2">JISO</span></div>
-        <div class="rt"><span>稟議 第一号</span><span id="rdate"></span></div>
-        <h3>Google広告 POCの実施</h3>
-        <div class="from">起票 — JISO（マーケティング担当AI）</div>
-        <dl>
-          <dt>申請金額</dt><dd>¥20,000（二週間）</dd>
-          <dt>目的</dt><dd>接触数 月+12件</dd>
-          <dt>想定ROI</dt><dd class="gold">382%</dd>
-          <dt>撤退条件</dt><dd>CPA ¥6,000 超過で自動停止</dd>
-        </dl>
-      </div>
+<!-- ============ 紺帯: 4エンジン ============ -->
+<section class="dark" id="engines">
+  <div class="wrap">
+    <h2 class="rv">会社が、自走するということ。</h2>
+    <p class="tag rv">人とAIエージェントが描く、新しい経営のカタチ</p>
+    <div class="engines">
+      <div class="eng rv"><div class="ei">営</div><h3>SALES ENGINE</h3><p>AIが電話し、商談する。リスト生成から架電、一次商談まで、本数に物理的な上限なし。</p></div>
+      <div class="eng rv d1"><div class="ei">広</div><h3>GROWTH ENGINE</h3><p>売れている型を学び、画像も動画も自動生成して入稿。予算は勝っている施策へ日次で再配分。</p></div>
+      <div class="eng rv d2"><div class="ei">信</div><h3>TRUST ENGINE</h3><p>納品のたびに事例・お客様の声・紹介動画を自動配備。信頼の在庫が、売るたびに増える。</p></div>
+      <div class="eng rv d3"><div class="ei">印</div><h3>RINGI ENGINE</h3><p>費用が要る打ち手はすべて稟議に。想定ROI・撤退条件つきで届き、承認するまで1円も動かない。</p></div>
     </div>
-  </section>
+    <p class="closing rv">4つのエンジンが<b>同じ業務システムの中で連携</b>することで、意思決定の迅速化と継続的な成長を実現。あなたの判断を支えるのは、答え合わせ済みの数字だけです。</p>
+  </div>
+</section>
 
-  <!-- 参 循環 -->
-  <section id="cycle">
-    <div class="wrap">
-      <div class="chapter rv">参 — THE CYCLE</div>
-      <h2 class="rv">商いの形は、八つの段。<br>業種が変わっても、変わらない。</h2>
-      <p class="prose rv">建築も、不動産も、店も、サービスも。事業はこの八段の循環でできています。JISOは数字が止まった段を見つけ、夜のうちに手を打ちます。</p>
-      <div class="belt rv d1">
-        <div><span class="bn">壱</span><span class="bw">認知</span></div>
-        <div><span class="bn">弐</span><span class="bw">信頼</span></div>
-        <div><span class="bn">参</span><span class="bw">接触</span></div>
-        <div><span class="bn">肆</span><span class="bw">商談</span></div>
-        <div><span class="bn">伍</span><span class="bw">受注</span></div>
-        <div><span class="bn">陸</span><span class="bw">納品</span></div>
-        <div><span class="bn">漆</span><span class="bw">請求</span></div>
-        <div><span class="bn">捌</span><span class="bw">再購入</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 肆 役割 -->
-  <section>
-    <div class="wrap">
-      <div class="chapter rv">肆 — DIVISION</div>
-      <h2 class="rv">AIが働き、人が決める。</h2>
-      <div class="duet rv d1" style="margin-top:64px">
-        <div>
-          <h3>AIの領分 <em>— 二十四時間</em></h3>
-          <ul>
-            <li>市場調査と、計画の更新</li>
-            <li>電話営業と、商談の一次対応</li>
-            <li>広告・SNS・画像と動画の生成</li>
-            <li>請求書の発行、入金の確認、督促</li>
-            <li>稟議の起票と、答え合わせ</li>
-          </ul>
-        </div>
-        <div>
-          <h3>人の領分 <em>— それだけ</em></h3>
-          <ul>
-            <li>「やりたいこと」を、最初に一度</li>
-            <li>稟議に、判を押す</li>
-            <li>訪問と、契約の署名</li>
-            <li>届いた物を、受け取る</li>
-            <li>握手をする</li>
-          </ul>
+<!-- ============ 交互セクション ============ -->
+<section class="alt">
+  <div class="wrap">
+    <div class="row">
+      <div class="rv">
+        <h2>すべての打ち手を、<br><span class="shu">標準装備のAI</span>で加速。</h2>
+        <p class="body">構築済みのAIエージェントが導入1日目から営業・マーケ・請求を回します。ビジネスの成長に合わせて、どこまでも共に自走し続けるOSです。</p>
+        <p class="price">β期間 月額98,000円より<a href="#signup">価格の詳細はこちら</a></p>
+        <div class="cta-row">
+          <a class="btn" href="#signup">無料でβ登録</a>
+          <a class="btn line" href="#report">デモを見る</a>
         </div>
       </div>
+      <div class="media m1 rv d1">
+        <!-- image-2 スロット[1] に差し替え可 -->
+        <div class="m-ringi">
+          <div class="m-stamp">承認</div>
+          <div class="rt"><span>RINGI #027</span><span>承認待ち</span></div>
+          <h4>Google広告 POCの実施</h4>
+          <table>
+            <tr><td>申請金額</td><td>¥20,000（2週間）</td></tr>
+            <tr><td>想定ROI</td><td><span class="roi">382%</span></td></tr>
+            <tr><td>撤退条件</td><td>CPA ¥6,000 超で自動停止</td></tr>
+          </table>
+        </div>
+        <div class="m-log"><span class="ok">✓</span> 架電 86/400 完了　<span class="ok">✓</span> SNS素材 5点生成<br><span class="r">!</span> 稟議 #027 起票 — あなたの承認待ち</div>
+      </div>
     </div>
-  </section>
 
-  <!-- 結 -->
-  <section class="coda" id="signup">
-    <div class="wrap">
-      <div class="chapter rv" style="text-align:center">結 — EARLY ACCESS</div>
-      <h2 class="rv">はじまりは、<br>少数の会社から。</h2>
-      <p class="prose rv">業種は問いません。「やりたいこと」が決まっている会社を、優先してご案内します。</p>
-      <!-- TODO: action をフォームエンドポイントへ -->
-      <form class="signup rv d1" action="#" method="post" onsubmit="event.preventDefault();this.innerHTML='<p style=&quot;padding:18px;width:100%;letter-spacing:.1em&quot;>受け付けました。案内をお送りします。</p>'">
-        <input type="email" required placeholder="会社のメールアドレス" aria-label="メールアドレス">
-        <button type="submit">登録</button>
-      </form>
-      <p class="micro rv d2">登録は無料 — 運営 合同会社ココアル</p>
+    <div class="row flip">
+      <div class="media m2 rv">
+        <div class="stage2">
+          <div class="funnel-mini">
+            <div class="ft">今月の自走ファネル<span>LIVE</span></div>
+            <div class="fbars">
+              <i style="height:100%"></i><i style="height:76%"></i><i style="height:58%"></i><i style="height:44%"></i><i style="height:33%"></i><i style="height:25%"></i><i style="height:21%"></i><i style="height:29%"></i>
+            </div>
+            <div class="fl"><span>認知</span><span>信頼</span><span>接触</span><span>商談</span><span>受注</span><span>納品</span><span>請求</span><span>再購入</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="rv d1">
+        <h2>数字が止まった段に、<br><span class="shu">夜のうちに</span>手を打つ。</h2>
+        <p class="body">商売は「認知→信頼→接触→商談→受注→納品→請求→再購入」の8段の循環。JISOは24時間この循環を観測し、詰まった段への打ち手を自動で計画。費用ゼロなら即実行、費用が要るなら稟議を起票します。</p>
+        <div class="cta-row"><a class="btn line" href="#industries">業種別の使い方を見る</a></div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-</main>
+<!-- ============ 業種グリッド ============ -->
+<section class="industries" id="industries">
+  <div class="wrap">
+    <h2 class="rv">どの業種でも、商売の構造は同じ。</h2>
+    <p class="lead rv">業種に合わせた8段ファネルのパラメータで、より早く、より確実に自走を立ち上げます。</p>
+    <div class="igrid">
+      <div class="icard rv"><h3>建築・工務店</h3><p>相見積もり前に接触する施主開拓と、施工事例の自動資産化で受注を加速。</p><span class="more">詳細はこちら</span><span class="blob"></span><span class="ico">🏗️</span></div>
+      <div class="icard rv d1"><h3>不動産</h3><p>物件反響への即時架電と内見率の自動改善で、媒介から成約までを短縮。</p><span class="more">詳細はこちら</span><span class="blob"></span><span class="ico">🏠</span></div>
+      <div class="icard rv d2"><h3>士業</h3><p>顧問先候補への信頼構築コンテンツと紹介循環を自動運転。</p><span class="more">詳細はこちら</span><span class="blob"></span><span class="ico">⚖️</span></div>
+      <div class="icard rv d3"><h3>EC・小売</h3><p>売れ筋の検知から広告再配分、レビュー獲得までを一気通貫で。</p><span class="more">詳細はこちら</span><span class="blob"></span><span class="ico">🛍️</span></div>
+      <div class="icard rv"><h3>店舗ビジネス</h3><p>商圏内の認知形成と再来店の仕掛けを、夜のうちに自動で。</p><span class="more">詳細はこちら</span><span class="blob"></span><span class="ico">🏮</span></div>
+      <div class="icard rv d1"><h3>BtoBサービス</h3><p>テレアポから商談、請求まで。営業組織ゼロでパイプラインが回る。</p><span class="more">詳細はこちら</span><span class="blob"></span><span class="ico">💼</span></div>
+      <div class="icard rv d2"><h3>教育</h3><p>体験申込の最大化と保護者への信頼形成を自動化。</p><span class="more">詳細はこちら</span><span class="blob"></span><span class="ico">🎓</span></div>
+      <div class="icard rv d3"><h3>製造</h3><p>展示会後のフォローと新規販路開拓の架電を止めない。</p><span class="more">詳細はこちら</span><span class="blob"></span><span class="ico">⚙️</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ レポートカード ============ -->
+<section class="report" id="report">
+  <div class="wrap">
+    <h2 class="rv">なぜJISOが「任せられるAI」なのか</h2>
+    <div class="rcard rv d1">
+      <div class="rviz">
+        <!-- image-2 スロット[3] に差し替え可 -->
+        <span class="vtag">JISO 設計思想</span>
+        <div class="circ c1"><span class="cn">24h</span><span class="cl">観測も執行も<br>止まらない</span></div>
+        <div class="circ c2"><span class="cn">¥0</span><span class="cl">承認なしで<br>使われる金額</span></div>
+      </div>
+      <div class="rtext">
+        <span class="pill">設計思想</span>
+        <h3>AIは訊かない。けれど、勝手に使わない。</h3>
+        <p>費用が発生する打ち手はすべて「稟議」として起票され、想定ROI・POC設計・撤退条件が必ず添付されます。承認後の実測値は試算と突き合わせて公開されるため、予測が外れ続けるAIに次の承認は要りません。信用を数字で積むのは、AIも同じです。</p>
+        <a class="btn line" href="#signup">設計の詳細を受け取る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="final" id="signup">
+  <div class="wrap">
+    <h2 class="rv">自走する会社へ、最初の承認を。</h2>
+    <p class="sub rv">β版は少数の企業から。「やりたいこと」が決まっている会社を優先します。</p>
+    <!-- TODO: action をフォームエンドポイントへ -->
+    <form class="signup rv d1" action="#" method="post" onsubmit="event.preventDefault();this.innerHTML='<p style=&quot;padding:16px;width:100%;font-weight:700&quot;>受け付けました。優先案内をお送りします。</p>'">
+      <input type="email" required placeholder="会社のメールアドレス" aria-label="メールアドレス">
+      <button type="submit">無料でβ登録</button>
+    </form>
+    <p class="micro rv d2">登録は無料 — 運営 合同会社ココアル</p>
+  </div>
+</section>
 
 <footer>
   <div class="wrap foot">
@@ -284,82 +339,8 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-size:11px;color:var(
 </footer>
 
 <script>
-/* ---------- 生成背景: 夜霧・一筋の光・漂う粒子 ---------- */
-const cv=document.getElementById('sky'),cx=cv.getContext('2d');
-let W,H,DPR=Math.min(devicePixelRatio||1,2);
-const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-function size(){W=innerWidth;H=innerHeight;cv.width=W*DPR;cv.height=H*DPR;cv.style.width=W+'px';cv.style.height=H+'px';cx.setTransform(DPR,0,0,DPR,0,0)}
-size();addEventListener('resize',size);
-
-const P=[];const N=innerWidth<700?46:90;
-for(let i=0;i<N;i++)P.push({x:Math.random()*1,y:Math.random()*1,r:.4+Math.random()*1.5,v:.00018+Math.random()*.00045,sw:Math.random()*Math.PI*2,a:.12+Math.random()*.4});
-
-let t=0,raf;
-function draw(){
-  t+=.0035;
-  // 夜の藍グラデーション
-  const g=cx.createLinearGradient(0,0,0,H);
-  g.addColorStop(0,'#101c30');g.addColorStop(.55,'#0c1525');g.addColorStop(1,'#090f1a');
-  cx.fillStyle=g;cx.fillRect(0,0,W,H);
-
-  // 霧（ゆっくり動く楕円光）
-  for(let i=0;i<3;i++){
-    const fx=W*(.25+.5*Math.sin(t*.6+i*2.1))+W*.2*Math.cos(t*.3+i);
-    const fy=H*(.3+.35*Math.cos(t*.4+i*1.7));
-    const fg=cx.createRadialGradient(fx,fy,0,fx,fy,W*.45);
-    fg.addColorStop(0,'rgba(60,84,118,.10)');fg.addColorStop(1,'rgba(60,84,118,0)');
-    cx.fillStyle=fg;cx.fillRect(0,0,W,H);
-  }
-
-  // 一筋の光（右寄りの金のシャフト・ゆらぎ）
-  const sx=W*.68+Math.sin(t*.8)*W*.012;
-  const shaftW=W*(.10+.012*Math.sin(t*1.7));
-  const sg=cx.createLinearGradient(sx-shaftW,0,sx+shaftW,0);
-  const glow=.16+.05*Math.sin(t*2.2)+.03*Math.sin(t*5.1);
-  sg.addColorStop(0,'rgba(232,193,132,0)');
-  sg.addColorStop(.5,`rgba(236,200,140,${glow})`);
-  sg.addColorStop(1,'rgba(232,193,132,0)');
-  cx.fillStyle=sg;cx.fillRect(sx-shaftW,0,shaftW*2,H);
-  // シャフトの芯
-  const cg=cx.createLinearGradient(sx-shaftW*.25,0,sx+shaftW*.25,0);
-  cg.addColorStop(0,'rgba(244,214,160,0)');cg.addColorStop(.5,`rgba(244,214,160,${glow*.9})`);cg.addColorStop(1,'rgba(244,214,160,0)');
-  cx.fillStyle=cg;cx.fillRect(sx-shaftW*.25,0,shaftW*.5,H);
-
-  // 粒子（上昇する塵・光の近くで金色に）
-  for(const p of P){
-    p.y-=p.v;p.sw+=.004;
-    if(p.y<-.02){p.y=1.02;p.x=Math.random()}
-    const px=(p.x+Math.sin(p.sw)*.008)*W, py=p.y*H;
-    const nearShaft=Math.max(0,1-Math.abs(px-sx)/(shaftW*1.6));
-    const al=p.a*(0.35+0.65*nearShaft)*(.8+.2*Math.sin(t*3+p.sw*5));
-    cx.beginPath();cx.arc(px,py,p.r*(1+nearShaft*.8),0,7);
-    cx.fillStyle=nearShaft>.25?`rgba(240,208,150,${al})`:`rgba(174,188,205,${al*.5})`;
-    cx.fill();
-  }
-  raf=requestAnimationFrame(draw);
-}
-function still(){ // reduced motion: 静止画1フレーム
-  t=2.4;const tmp=requestAnimationFrame;draw();cancelAnimationFrame(raf);
-}
-if(reduce){still()}else{draw();
-  document.addEventListener('visibilitychange',()=>{document.hidden?cancelAnimationFrame(raf):draw()});
-}
-
-/* ---------- nav ---------- */
-const nav=document.getElementById('nav');
-addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40),{passive:true});
-
-/* ---------- reveal ---------- */
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.18});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14});
 document.querySelectorAll('.rv:not(.in)').forEach(el=>io.observe(el));
-
-/* ---------- 稟議: 視界に入って2.6秒後に承認印 ---------- */
-document.getElementById('rdate').textContent=new Date().toLocaleDateString('ja-JP');
-const card=document.getElementById('ringiCard');
-const rio=new IntersectionObserver(es=>es.forEach(e=>{
-  if(e.isIntersecting){setTimeout(()=>card.classList.add('done'),reduce?0:2600);rio.unobserve(card)}
-}),{threshold:.5});
-rio.observe(card);
 </script>
 </body>
 </html>
