@@ -1,0 +1,11 @@
+{
+  "_comment": "8段ファネル: 認知→信頼→接触→商談→受注→納品→請求→再購入。係数は初期仮説値。実測で上書きする。",
+  "stages": ["awareness","trust","contact","negotiation","order","delivery","invoice","repeat"],
+  "industries": {
+    "btob_saas":    { "call_to_appt": 0.02, "appt_to_deal": 0.5, "deal_to_order": 0.33, "avg_gross_yen": 200000, "cycle_days": 30 },
+    "construction": { "call_to_appt": 0.015,"appt_to_deal": 0.6, "deal_to_order": 0.4,  "avg_gross_yen": 800000, "cycle_days": 60 },
+    "real_estate":  { "call_to_appt": 0.012,"appt_to_deal": 0.5, "deal_to_order": 0.25, "avg_gross_yen": 1000000,"cycle_days": 45 },
+    "local_service":{ "call_to_appt": 0.025,"appt_to_deal": 0.7, "deal_to_order": 0.5,  "avg_gross_yen": 60000,  "cycle_days": 14 },
+    "ec_retail":    { "call_to_appt": 0.0,  "appt_to_deal": 0.0, "deal_to_order": 0.02, "avg_gross_yen": 4000,   "cycle_days": 3 }
+  }
+}
