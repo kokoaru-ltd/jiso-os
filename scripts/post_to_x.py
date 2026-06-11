@@ -22,7 +22,7 @@ POSTS = [
     ),
     (
         "It's live, not a deck:\n"
-        "\u2713 Hourly autonomous loop on a production DB\n"
+        "\u2713 Hourly autonomous loop with real approval logs\n"
         "\u2713 It caught a missed KPI and filed its own spend request "
         "(\u00a520k ad POC, 382% ROI, auto-stop at CPA \u00a56k)\n"
         "\u2713 Approve \u2192 execute \u2192 Slack, fully logged\n"
@@ -32,7 +32,7 @@ POSTS = [
         "The AI doesn't get a wallet. It gets a budget ceiling.\n\n"
         "Approved amount = hard API spend limit. \u00a50 moves without a human "
         "stamp.\n\n"
-        "Building in public from Tokyo. Code, schemas, failures \u2014 all of "
+        "Building in public from Tokyo. Decisions, numbers, failures \u2014 all of "
         "it. Follow along. \U0001f3ef\n\n#buildinpublic #AIagents"
     ),
     # --- JA single post (appended to thread) ---
