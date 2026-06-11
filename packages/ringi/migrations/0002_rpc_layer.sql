@@ -1,0 +1,3 @@
+-- 適用済み: RPC層（jiso_signup / jiso_ringi_list / jiso_ringi_decide / jiso_loop_tick / jiso_check_secret）
+-- 注意: スキーマ名"loop"はplpgsql予約語のため、関数本体では必ず "loop" と引用符付きで参照すること
+-- 本体は本番DBに適用済み。新プロジェクト移設時はSupabaseマイグレーション履歴からエクスポートして再適用。

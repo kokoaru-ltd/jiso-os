@@ -1,0 +1,3 @@
+-- 適用済み: Slack通知トリガー
+-- 稟議起票(🔴) / 承認(🟢) / 執行開始(▶️) / 却下(⛔) / 人間タスク発注(👤) をWebhookへ
+-- webhook URLは loop.config (key='slack_webhook_url') に保管
