@@ -1,91 +1,92 @@
 # INCAGENT
 
-**AIに10万円を渡して、商売をさせる。**
+**Goal, budget, approval. INCAGENT runs the company loop.**
 
-INCAGENT is a public experiment and operating system for AI-run commerce.
-The first business is resale: an AI researches products, drafts purchase proposals,
-creates listings, updates prices, and reports profit. Humans approve spending and
-handle physical tasks such as payment, inspection, packing, and shipping.
+INCAGENT is an autonomous company operating system.
 
-INCAGENT is not selling "AI software" first. It proves itself by running a real
-small business in public.
+The founder gives a goal, a budget, and authority limits. INCAGENT handles the loop:
+market research, announcements, ads, sales, CRM, purchasing, invoicing, reporting,
+and next actions. Humans are pulled in only for approvals, physical work, legal
+decisions, and high-risk judgment.
 
-## What We Sell First
+INCAGENT is not a CRM, sales assistant, ad tool, or resale tool. Those are branches.
+INCAGENT is the operating layer above them.
 
-最初に売るものはOSではなく、商品です。
+## What It Does
 
-予算10万円で仕入れ、販売し、90日以内に数字で検証します。公開する数字は単純です。
+Japanese:
 
-- Starting capital: JPY 100,000
-- Inventory bought
-- Revenue
-- Gross profit
-- Unsold inventory
-- Mistakes and write-downs
+やりたいこと、予算、権限だけ渡す。INCAGENTが告知、広告、営業、CRM、
+仕入れ、請求、改善まで一気通貫で回す。人間が必要な場所だけ、稟議または
+作業指示として人間に戻す。
 
-This makes the story understandable: did AI turn JPY 100,000 into more money or not?
+English:
 
-## How INCAGENT Works
+Give INCAGENT a goal, a budget, and authority limits. It runs awareness, ads, sales,
+CRM, purchasing, invoicing, and optimization end to end. Humans approve spend and
+handle the parts that must stay human.
 
-AI does:
+## Operating Loop
 
-- Product research
-- Market price checks
-- Profit estimates
-- Purchase proposals
-- Listing copy
-- Price updates
-- Weekly reports
+1. Goal
+2. Constraints
+3. Market evidence
+4. Action proposal
+5. Approval
+6. Execution
+7. Result measurement
+8. Next action
 
-Humans do:
+Money does not move without approval. Every paid action must include expected return,
+risk, and a stop condition.
 
-- Final purchase approval
-- Payment
-- Receiving goods
-- Packing and shipping
-- Loss-cut decisions when needed
+## First Proof
 
-Money does not move without approval. Every purchase proposal must include expected
-profit, risk, and an exit condition.
+The first public experiment can be resale because it creates visible profit and loss
+quickly. But resale is not the company. It is one proof format.
+
+Other valid first loops:
+
+- Launch a small service offer
+- Get qualified sales calls
+- Recover dormant customers
+- Test a SaaS landing page
+- Buy inventory and sell it
+- Run ads with a hard budget ceiling
+
+The proof is always the same: did INCAGENT turn a goal and budget into measurable
+business progress?
 
 ## Why This Can Become a Company
 
-The company only works if the experiment creates proof.
+Traditional SaaS assumes humans operate the company and software stores the work.
+INCAGENT assumes AI operates the loop and humans provide approval, capital, physical
+execution, and judgment.
 
-The path is:
+Old SaaS: use this tool to do your work.
 
-1. Run a real resale business with JPY 100,000.
-2. Publish every decision, result, and failure.
-3. Turn repeated workflows into software.
-4. Sell the operating system only after the numbers prove it can help an actual business.
-
-The first wedge is not "autonomous company OS" as a vague promise. The first wedge is
-AI-assisted resale operations with visible profit and loss.
+INCAGENT: give the system a goal and budget; it runs the work and asks only when blocked.
 
 ## Business Model
 
 Near term:
 
-- Resale profit from the public experiment
+- Revenue from internal public experiments
 - Content and audience growth from transparent weekly reporting
-- Service work for small sellers who want the same research, listing, and pricing workflow
+- Managed operations for small businesses
 
 Later:
 
-- INCAGENT subscription for commerce operators
-- Usage-based automation for research, listing, repricing, and approval workflows
-- Done-with-you setup for sellers with existing inventory or marketplace accounts
+- Subscription for company operating loops
+- Usage-based automation
+- Approval and spend-governance tiers
+- Enterprise controls after small-business proof
 
-## English Summary
+## Strategy
 
-INCAGENT is an AI-operated commerce company.
+Detailed company and product strategy:
 
-We start with a simple public challenge: give AI JPY 100,000 and let it run a resale
-business. The AI researches products, estimates profit, drafts purchase proposals,
-creates listings, and reports results. A human approves spending and handles physical
-operations.
-
-If the experiment fails, the loss is visible. If it works, INCAGENT has proof that
-its operating system can create business value before selling the software.
+- [Company Strategy](docs/COMPANY_STRATEGY.md)
+- [Architecture](docs/ARCHITECTURE.md)
 
 Operator: Kokoaru LLC
