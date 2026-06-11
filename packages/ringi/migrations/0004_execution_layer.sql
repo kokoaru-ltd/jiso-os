@@ -1,0 +1,4 @@
+-- 適用済み: 実行層
+-- executions: 稟議にぶら下がる実行ステップ（ai_task/human_task、payloadに掲載文・選定基準・計測設計の実体）
+-- outreach_log: 全ての対外やり取りの履歴（counterparty/channel/direction/全文）
+-- 金の流れ設計: AIは決済主体にならない。会社カードを広告アカウントに登録(人間1回)→OSは稟議承認額を予算上限としてAPIに書き込む
