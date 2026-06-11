@@ -1,4 +1,4 @@
-# JISO（自走）— Autonomous Business OS
+# INCAGENT — Autonomous Business OS
 
 **社長の仕事は、承認だけになる。**
 
@@ -23,7 +23,7 @@ docs            — アーキテクチャ
 
 ## インフラ
 
-- DB: Supabase（schema: `loop` → `jiso` へ改名予定 / RLS有効）
+- DB: Supabase（schema: `loop` / RLS有効）
 - 音声営業: ElevenLabs + Twilio
 - 画像生成: gpt-image-2 / 動画生成: Seedance 2.0
 - 外部スキル導入: SkillSpectorスキャン必須ゲート

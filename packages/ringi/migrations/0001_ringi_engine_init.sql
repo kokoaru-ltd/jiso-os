@@ -1,4 +1,4 @@
--- JISO 稟議エンジン 初期スキーマ（適用済み: Supabase project wckfqfjzpmjkznhnfaqb, schema "loop"）
+-- INCAGENT 稟議エンジン 初期スキーマ（適用済み: Supabase project wckfqfjzpmjkznhnfaqb, schema "loop"）
 create schema if not exists loop;
 
 create table loop.goals (

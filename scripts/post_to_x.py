@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-JISO — X (Twitter) thread poster for @incagentai
+INCAGENT — X (Twitter) thread poster for @incagentai
 Usage:
   pip install requests-oauthlib
   export X_API_KEY=... X_API_SECRET=... X_ACCESS_TOKEN=... X_ACCESS_SECRET=...

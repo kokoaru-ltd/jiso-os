@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-JISO — Freelancer.com auto-intake worker
+INCAGENT — Freelancer.com auto-intake worker
 Finds matching projects, scores them, drafts a personalized bid,
 then either sends it to Slack for approval (default) or submits it (AUTO_BID=1).
 
@@ -21,7 +21,7 @@ TOKEN = os.environ.get("FREELANCER_TOKEN", "")
 SLACK = os.environ.get("SLACK_WEBHOOK", "")
 AUTO_BID = os.environ.get("AUTO_BID") == "1"
 
-# --- What JISO can actually deliver (our two productized services) ---
+# --- What INCAGENT can actually deliver (our two productized services) ---
 SERVICES = {
     "lead_list": {
         "keywords": ["lead generation", "lead list", "prospect list", "b2b leads", "contact list"],
@@ -107,10 +107,10 @@ def main():
             if AUTO_BID:
                 uid = uid or my_user_id()
                 code, body = place_bid(p, svc, uid)
-                slack(f":dart: *JISO bid submitted* ({code})\n{line}\nPrice: ${svc['our_price_usd']} / {svc['days']}d")
+                slack(f":dart: *INCAGENT bid submitted* ({code})\n{line}\nPrice: ${svc['our_price_usd']} / {svc['days']}d")
                 print("bid:", code, body)
             else:
-                slack(f":raising_hand: *JISO found a job match* (score {s})\n*{p['title'][:80]}*\n{url}\n"
+                slack(f":raising_hand: *INCAGENT found a job match* (score {s})\n*{p['title'][:80]}*\n{url}\n"
                       f"Proposed: ${svc['our_price_usd']} / {svc['days']} days\n"
                       f"Draft bid:\n>{svc['pitch'].format(n=100)[:400]}\n"
                       f"Reply APPROVE in thread or run with AUTO_BID=1 to submit.")
